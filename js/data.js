@@ -1,14 +1,24 @@
 cef.emit("game:hud:setComponentVisible", "interface", false);
 cef.emit("game:hud:setComponentVisible", "radar", true);
 
+// Poll player stats
 cef.emit("game:data:pollPlayerStats", true, 50);
 cef.emit('grp:hud');
+
+// Listen to bank and cash money changes
 cef.on("data:pool:bankmoney", (bankmoney) => {
-    document.getElementById('pBank').textContent = bankmoney;
-})
+    if (bankmoney !== undefined) {
+        document.getElementById('pBank').textContent = bankmoney;
+    }
+});
+
 cef.on("data:pool:cashmoney", (cashmoney) => {
-    document.getElementById('pCash').textContent = cashmoney;
-})
+    if (cashmoney !== undefined) {
+        document.getElementById('pCash').textContent = cashmoney;
+    }
+});
+
+// Handle player stats
 cef.on("game:data:playerStats", (hp, max_hp, arm, breath, wanted, weapon, ammo, max_ammo, money, speed) => {
     document.getElementById('weapon').src = "./img/weapons/" + weapon + ".png";
     const healthDiv = document.querySelector('.health');
@@ -17,49 +27,51 @@ cef.on("game:data:playerStats", (hp, max_hp, arm, breath, wanted, weapon, ammo, 
     const armorDiv = document.querySelector('.armor');
     armorDiv.style.width = arm + '%';
 });
+
+// Handle gift box display
 cef.on("data:pool:giftbox", (giftbox) => {
     document.getElementById('bonustime').textContent = giftbox;
-})
-cef.on("data:pool:greenzonex", (greenzonex) => {
-    if (greenzonex) {
-        document.getElementById('greenzonediv').style.display = "flex";
-    }
-    else {
-        document.getElementById('greenzonediv').style.display = "none";
-    }
-})
-cef.on("data:pool:gpsonc", (gpsonc) => {
-    if (gpsonc) {
-        document.getElementById('gpsdiv').style.display = "flex";
-        document.getElementById('gpsloc').textContent = " " + gpson;
-    }
-    else {
-        document.getElementById('gpsdiv').style.display = "none";
-        document.getElementById('gpsloc').textContent = "";
-    }
-})
+});
 
+// Handle green zone display
+cef.on("data:pool:greenzonex", (greenzonex) => {
+    const greenzoneDiv = document.getElementById('greenzonediv');
+    greenzoneDiv.style.display = greenzonex ? "flex" : "none";
+});
+
+// Handle GPS display
+cef.on("data:pool:gpsonc", (gpsonc) => {
+    const gpsDiv = document.getElementById('gpsdiv');
+    const gpsLoc = document.getElementById('gpsloc');
+
+    if (gpsonc) {
+        gpsDiv.style.display = "flex";
+        gpsLoc.textContent = " " + gpson;
+    } else {
+        gpsDiv.style.display = "none";
+        gpsLoc.textContent = "";
+    }
+});
+
+// Handle wanted level display
 cef.on("data:pool:wantedlevelx", (wantedlevelx) => {
-    for(let i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 6; i++) {
         document.getElementById(`wanted${i}`).style.display = "none";
     }
 
-    if(wantedlevelx >= 1 && wantedlevelx <= 6) {
-        for(let i = 1; i <= wantedlevel; i++) {
+    if (wantedlevelx >= 1 && wantedlevelx <= 6) {
+        for (let i = 1; i <= wantedlevelx; i++) {
             document.getElementById(`wanted${i}`).style.display = "flex";
         }
     }
 });
 
+// Handle speedometer display
 cef.on("data:pool:speedometerx", (speedometerx) => {
-    if (speedometerx) {
-        document.getElementById('status_speedometer').style.display = "flex";
-    }
-    else {
-        document.getElementById('status_speedometer').style.display = "none";
-    }
-})
+    document.getElementById('status_speedometer').style.display = speedometerx ? "flex" : "none";
+});
 
+// Handle vehicle stats
 cef.on("data:vehiclex", (carspeedx, cardoorx, carenginex, carfuelx) => {
     const data = {
         speed: carspeedx,
@@ -74,11 +86,11 @@ cef.on("data:vehiclex", (carspeedx, cardoorx, carenginex, carfuelx) => {
 
     function updateDashboard(data) {
         const speedPercentage = data.speed / data.maxSpeed;
-        const speedOffset = 504.295 * (1 - speedPercentage); 
+        const speedOffset = 504.295 * (1 - speedPercentage);
         document.getElementById('hud-speedometer').style.strokeDashoffset = speedOffset;
 
         const fuelPercentage = data.fuelLevel / data.maxFuelLevel;
-        const fuelOffset = 208.907 * (1 - fuelPercentage); 
+        const fuelOffset = 208.907 * (1 - fuelPercentage);
         document.getElementById('hud-fuel').style.strokeDashoffset = fuelOffset;
 
         document.getElementById('textspeed').textContent = data.speed;
@@ -91,42 +103,34 @@ cef.on("data:vehiclex", (carspeedx, cardoorx, carenginex, carfuelx) => {
         doorElement.classList.toggle('off', !data.doorsLocked);
         doorElement.classList.toggle('on', data.doorsLocked);
     }
-
 });
 
-
+// Notification display
 cef.on("data:pool:notificationx", (notificationx) => {
-    switch(notificationx)
-    {
+    switch(notificationx) {
         case 1:
-            {
-                showNotification("მანქანის ძრავი წარმატებით დაიქოქა");
-                break;
-            }
+            showNotification("მანქანის ძრავი წარმატებით დაიქოქა");
+            break;
         case 2:
-            {
-                showNotification("მანქანის ძრავი წარმატებით ჩაქვრა");
-                break;
-            }
+            showNotification("მანქანის ძრავი წარმატებით ჩაქვრა");
+            break;
         case 3:
-            {
-                showNotification("მანქანის კარი წარმატებით გაიღო");
-                break;
-            }
+            showNotification("მანქანის კარი წარმატებით გაიღო");
+            break;
         case 4:
-            {
-                showNotification("მანქანის კარი წარმატებით დაიხურა");
-                break;
-            }
+            showNotification("მანქანის კარი წარმატებით დაიხურა");
+            break;
     }
 });
 
+// Info text display
 cef.on("data:pool:infotxtc", (infotxtc) => {
-    showNotification(infotxtc)
+    showNotification(infotxtc);
 });
 
+// Error text display
 cef.on("data:pool:errortxtx", (errortxtx) => {
-    showError(errortxtx)
+    showError(errortxtx);
 });
 
 const bar = document.getElementById('notification-bar');
