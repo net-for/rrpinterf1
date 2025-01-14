@@ -13,7 +13,7 @@ function updateClock() {
 
     // Format the clock string
     const timeString = hours + ':' + minutesStr + (isPM ? ' PM' : ' AM');
-    $('#clock').text(timeString);
+    document.getElementById('clock').innerText = timeString;
 
     // Get the current month (zero-indexed, so +1 to match calendar months)
     const currentMonth = now.getMonth(); // Returns values 0-11
@@ -26,7 +26,7 @@ function updateClock() {
     ];
 
     const month = months[currentMonth] || 'უცნობი'; // Default to 'უცნობი' if something goes wrong
-    $('#month').text(month);
+    document.getElementById('month').innerText = month;
 }
 
 // Call the function once immediately to set initial values
