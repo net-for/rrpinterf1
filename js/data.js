@@ -8,12 +8,16 @@ cef.emit('grp:hud');
 // Listen to bank and cash money changes
 cef.on("data:pool:bankmoney", (bankmoney) => {
     if (bankmoney !== undefined) {
+        // Log the received value to check if it's correct
+        console.log("Bank Money: " + bankmoney);
         document.getElementById('pBank').textContent = bankmoney;
     }
 });
 
 cef.on("data:pool:cashmoney", (cashmoney) => {
     if (cashmoney !== undefined) {
+        // Log the received value to check if it's correct
+        console.log("Cash Money: " + cashmoney);
         document.getElementById('pCash').textContent = cashmoney;
     }
 });
