@@ -12,7 +12,7 @@ function updateClock() {
     const minutesStr = minutes < 10 ? '0' + minutes : minutes;
 
     // Format the clock string
-    const timeString = hours + ':' + minutesStr + (isPM ? ' PM' : ' AM');
+    const timeString = hours + ':' + minutesStr);
     document.getElementById('clock').innerText = timeString;
 
     // Get the current month (zero-indexed, so +1 to match calendar months)
