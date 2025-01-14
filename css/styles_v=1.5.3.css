@@ -1,0 +1,890 @@
+p {
+    color: white;
+}
+::-webkit-scrollbar {
+    display: flex;
+}
+
+body {
+    height: 100vh;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    position: relative;
+}
+.divlogo{
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+}
+.iconca {
+    width: 25px;
+    height: 25px;
+}
+.statisticsdiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.statisticsimg {
+    width: 80px;
+    height: 80px;
+  }
+
+.background-shadow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none; 
+    background: linear-gradient(205deg, #000000b0 2%, transparent 15%);
+    z-index: -1;
+}
+  
+.right{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-left: auto;
+    width: 170px;
+    padding: 5px;
+    border-radius: 10%;
+    margin-right: 1vh;
+}
+.rightTwo{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    z-index: 1;
+    margin-left: auto;
+    width: 170px;
+    padding: 5px;
+    border-radius: 10%;
+    margin-right: 1vh;
+}
+.rightTwoo {
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 1;
+    margin-left: auto;
+    width: 170px;
+    padding: 5px;
+    border-radius: 10%;
+    margin-right: 1vh;
+    gap: 15px;
+}
+.rightSidebar {
+    margin-top: 1%;
+    display: flex;
+    float: right;
+}
+.statisticsMain {
+    margin-right: 5%;
+    display: inline-flex;
+    gap: 15px;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+}
+.statisticsLeft {
+    display: list-item;
+    list-style: none;
+}
+.statisticsPadding {
+    margin-top: 5px;
+}
+.logo-main {
+    display: flex;
+}
+.logo-main img {
+    display: flex;
+    height: 80px;
+    width: 100px;
+}
+.mainDiv {
+}
+.progressHealth{
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.centered {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    transform: translate(-50%, -50%);
+}
+.centeredSecond {
+    position: absolute;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 10px;
+}
+.statisticsLeftTwo {
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: space-around;
+}
+.iconsImageSecond {
+    width: 25px;
+    height: 25px;
+}
+.cash{
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    gap: 5px;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+.bank {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 400;
+}
+.moneystats { 
+    width: 35px; 
+    height: 35px;
+}
+.textgps {
+    font-size: 20px;
+}
+.rightSidebarTwo {
+    display: flex;
+    float: right;
+    margin-right: 10px;
+}
+.weapons {
+    display: flex;
+    margin-left: 15px;
+    border-radius: 10px;
+    padding: 2vh;
+}
+.weaponimg{
+    width: 50px;
+    height: 35px;
+}
+.ammo {
+}
+.navBar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    left: 1%;
+    top: 36%;
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    border-radius: 10%;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+  .square {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ff161663;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-family: AkrobatBold;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  .menu h2 {
+    font-family: "BPG Nateli Mtavruli", sans-serif;
+    color: white;
+    margin-left: 1vh;
+    font-size: 18px;
+  }
+
+.moneydiv{
+    display: inline-flex;
+    padding: 3px;
+}
+.iconsImage {
+    width: 20px;
+    height: 20px;
+}
+.greenzone {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: "BPG Nateli Mtavruli", sans-serif;
+    padding: 10px;
+    text-wrap: nowrap;
+  }
+.menuxzc {
+    background: linear-gradient(to left, #0cff00b8, #0cff00b8, #0cff00b8);
+    display: none;
+    align-items: center;
+    border-radius: 15px;
+    width: 200px;
+}
+.textzone {
+    font-size: 20px;
+    text-wrap: nowrap;
+    margin-top: 3px;
+}
+.menugps {
+    background: linear-gradient(to right, #ff16168e, #ff16168e, #ff161640);        
+    display: none;
+    align-items: center;
+    border-radius: 15px;
+    width: 300px;
+}
+.iconlocation {
+    width: 35px;
+    height: 35px;
+}
+.gps {
+    gap: 1px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: "BPG Nateli Mtavruli", sans-serif;
+    padding: 5px;
+    text-wrap: nowrap;
+  }
+  .wanteddiv{
+    display: inline-flex;
+    gap: 10px;
+}
+.wanteddivv{
+    display: inline-flex;
+    gap: 10px;
+}
+.datetext {
+    font-size: 35px;
+    font-weight: 300;
+}
+.month {
+    font-family: "BPG Nateli Mtavruli", sans-serif;
+    font-size: 20px;
+    font-weight: 1000;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.datebackground {
+    border-radius: 10%;
+    background: linear-gradient(to right, #ff161640, #ff16168e, #ff161640);
+}
+.wantedimg {
+    margin-top: 10px;
+    width: 35px; 
+    height: 35px; 
+    display: none;
+}
+.right-bottom{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-left: auto;
+    width: 170px;
+    padding: 10px;
+    border-radius: 10%;
+    margin-right: 1vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.notification {
+    width: 100%;
+    background: linear-gradient(to left, #005b093c, #005b09a8, #005b093c);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: -50px;
+    left: 0;
+    transition: bottom 0.5s;
+}
+
+.error {
+    width: 100%;
+    background: linear-gradient(to left, #5b001b3c, #5b001bcb, #5b001b3c);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: -50px;
+    left: 0;
+    transition: bottom 0.5s;
+}
+
+.hidden {
+    bottom: -50px;
+}
+
+.visible {
+    bottom: 0px;
+}
+
+.icon {
+    padding-right: 10px;
+    font-size: 25px;
+}
+
+#message {
+    font-family: 'BPG Nateli Mtavruli', sans-serif;
+    font-size: 20px;
+}
+.rightGift{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    margin-left: auto;
+    width: 170px;
+    padding: 1px;
+    border-radius: 10%;
+    margin-right: 1vh;
+    flex-wrap: nowrap;
+}
+.giftimage {
+    width: 50px;
+    height: 50px;
+}
+.gifttimer {
+    background: linear-gradient(to right, #ff161640, #ff16168e, #ff16168e);
+    align-items: center;
+    border-radius: 15px;
+    width: 190px;
+    height: 60px;
+}
+.textgift {
+    font-size: 12px;
+    margin-top: 3px;
+    font-weight: 900;
+}
+.textgiftFirst {
+    font-size: 14px;
+    margin-top: 3px;
+    font-weight: 900;
+}
+.giftzone {
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: "BPG Nateli Mtavruli", sans-serif;
+    padding: 5px;
+  }
+  .giftTexts {
+    padding: 2px;
+  }
+
+
+  .progress-container {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.health {
+    height: 10px;
+    background-color: #dc5858;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+}
+.armor {
+    height: 10px;
+    background-color: #589cdc;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+}
+.hungry {
+    height: 10px;
+    background-color: #ffa755;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+}
+.progressbar {
+    width: 200px;
+}
+
+  @media (max-width: 1440px) {
+    .divlogo{
+        display: inline-flex;
+        flex-direction: row-reverse;
+        gap: 20px;
+    }
+    .iconca {
+        width: 20px;
+        height: 20px;
+    }
+    .statisticsdiv {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .statisticsimg {
+        width: 65px;
+        height: 65px;
+      }
+      .moneystats { 
+        width: 20px; 
+        height: 20px;
+      }
+      .iconsImageSecond {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .background-shadow::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none; 
+        background: linear-gradient(205deg, #000000b0 2%, transparent 15%);
+        z-index: -1;
+    }
+      
+    .right{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        margin-left: auto;
+        width: 170px;
+        padding: 1px;
+        border-radius: 10%;
+        margin-right: 1vh;
+    }
+    .rightTwo{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        z-index: 1;
+        margin-left: auto;
+        width: 170px;
+        padding: 5px;
+        border-radius: 10%;
+        margin-right: 1vh;
+    }
+    .rightTwoo {
+        display: flex;
+        flex-direction: row-reverse;
+        z-index: 1;
+        margin-left: auto;
+        width: 170px;
+        padding: 5px;
+        border-radius: 10%;
+        margin-right: 1vh;
+        gap: 5px;
+    }
+    .rightSidebar {
+        margin-top: 1%;
+        display: flex;
+        float: right;
+    }
+    .statisticsMain {
+        margin-right: 5%;
+        display: inline-flex;
+        gap: 15px;
+        font-family: "Madimi One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        display: flex;
+    }
+    .statisticsLeft {
+        display: list-item;
+        list-style: none;
+    }
+    .statisticsPadding {
+        margin-top: 5px;
+    }
+    .logo-main {
+        display: flex;
+    }
+    .logo-main img {
+        display: flex;
+        height: 60px;
+        width: 80px;
+    }
+    .mainDiv {
+    }
+    .progressHealth{
+        color: white;
+        text-align: center;
+        position: relative;
+    }
+    .centered {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        font-family: "Encode Sans Expanded", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        transform: translate(-50%, -50%);
+    }
+    .centeredSecond {
+        position: absolute;
+        font-family: "Madimi One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        margin-left: 10px;
+    }
+    .statisticsLeftTwo {
+        font-family: "Encode Sans Expanded", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        justify-content: space-around;
+    }
+
+    .cash{
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        gap: 5px;
+        color: rgb(255, 255, 255);
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: 600;
+    }
+    .bank {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+        color: rgb(255, 255, 255);
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: 400;
+    }
+    .textgps {
+        font-size: 16px;
+    }
+    .rightSidebarTwo {
+        display: flex;
+        float: right;
+        margin-right: 10px;
+    }
+    .weapons {
+        display: flex;
+        margin-left: 15px;
+        border-radius: 10px;
+        padding: 2vh;
+    }
+    .weaponimg{
+        width: 50px;
+        height: 35px;
+    }
+    .navBar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        left: 1%;
+        top: 30%;
+        width: 150px;
+        height: 150px;
+        padding: 5px;
+        border-radius: 10%;
+      }
+    
+      .menu {
+        display: flex;
+        align-items: center;
+      }
+      .square {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #ff161663;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+        font-family: AkrobatBold;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        font-family: "Encode Sans Expanded", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+      }
+      .menu h2 {
+        font-family: "BPG Nateli Mtavruli", sans-serif;
+        color: white;
+        margin-left: 1vh;
+        font-size: 18px;
+      }
+    
+    .moneydiv{
+        display: inline-flex;
+        padding: 3px;
+    }
+    .iconsImage {
+        width: 15px;
+        height: 15px;
+    }
+    .greenzone {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-family: "BPG Nateli Mtavruli", sans-serif;
+        padding: 10px;
+        text-wrap: nowrap;
+      }
+    .menuxzc {
+        background: linear-gradient(to left, #0cff00b8, #0cff00b8, #0cff00b8);
+        display: none;
+        align-items: center;
+        border-radius: 15px;
+        width: 150px;
+    }
+    .textzone {
+        font-size: 16px;
+        text-wrap: nowrap;
+        margin-top: 3px;
+    }
+    .menugps {
+        background: linear-gradient(to right, #ff16168e, #ff16168e, #ff161640);        
+        display: none;
+        align-items: center;
+        border-radius: 15px;
+        width: 230px;
+    }
+    .iconlocation {
+        width: 25px;
+        height: 25px;
+    }
+    .gps {
+        gap: 1px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-family: "BPG Nateli Mtavruli", sans-serif;
+        padding: 5px;
+        text-wrap: nowrap;
+      }
+      .wanteddiv{
+        display: inline-flex;
+        gap: 10px;
+    }
+    .wanteddivv{
+        display: inline-flex;
+        gap: 10px;
+    }
+    .datetext {
+        font-size: 25px;
+        font-weight: 300;
+    }
+    .month {
+        font-family: "BPG Nateli Mtavruli", sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .datebackground {
+        border-radius: 10%;
+        background: linear-gradient(to right, #ff161640, #ff16168e, #ff161640);
+    }
+    .wantedimg {
+        margin-top: 10px;
+        width: 35px; 
+        height: 35px; 
+        display: none;
+    }
+    .right-bottom{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        margin-left: auto;
+        width: 170px;
+        padding: 10px;
+        border-radius: 10%;
+        margin-right: 1vh;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .notification {
+        width: 100%;
+        background: linear-gradient(to left, #005b093c, #005b09a8, #005b093c);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: -50px;
+        left: 0;
+        transition: bottom 0.5s;
+    }
+    
+    .error {
+        width: 100%;
+        background: linear-gradient(to left, #5b001b3c, #5b001bcb, #5b001b3c);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: -50px;
+        left: 0;
+        transition: bottom 0.5s;
+    }
+    
+    .hidden {
+        bottom: -50px;
+    }
+    
+    .visible {
+        bottom: 0px;
+    }
+    
+    .icon {
+        padding-right: 10px;
+        font-size: 25px;
+    }
+    
+    #message {
+        font-family: 'BPG Nateli Mtavruli', sans-serif;
+        font-size: 20px;
+    }
+    .rightGift{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row-reverse;
+        margin-left: auto;
+        width: 130px;
+        padding: 1px;
+        border-radius: 10%;
+        margin-right: 1vh;
+        flex-wrap: nowrap;
+    }
+    .giftimage {
+        width: 50px;
+        height: 50px;
+    }
+    .gifttimer {
+        background: linear-gradient(to right, #ff161640, #ff16168e, #ff16168e);
+        align-items: center;
+        border-radius: 15px;
+        width: 190px;
+        height: 60px;
+    }
+    .textgift {
+        font-size: 12px;
+        margin-top: 3px;
+        font-weight: 900;
+    }
+    .textgiftFirst {
+        font-size: 14px;
+        margin-top: 3px;
+        font-weight: 900;
+    }
+    .giftzone {
+        gap: 15px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-family: "BPG Nateli Mtavruli", sans-serif;
+        padding: 5px;
+      }
+      .giftTexts {
+        padding: 2px;
+      }
+
+      .progress-container {
+        margin-bottom: 20px;
+    }
+    
+    .progress-bar {
+        width: 100%;
+        background-color: #e0e0e0;
+        border-radius: 25px;
+        overflow: hidden;
+    }
+    .health {
+        height: 10px;
+        background-color: #dc5858;
+        border-radius: 25px;
+        text-align: center;
+        line-height: 25px;
+        color: white;
+        font-weight: bold;
+    }
+    .armor {
+        height: 10px;
+        background-color: #589cdc;
+        border-radius: 25px;
+        text-align: center;
+        line-height: 25px;
+        color: white;
+        font-weight: bold;
+    }
+    .hungry {
+        height: 10px;
+        background-color: #ffa755;
+        border-radius: 25px;
+        text-align: center;
+        line-height: 25px;
+        color: white;
+        font-weight: bold;
+    }
+    .progressbar {
+        width: 200px;
+    }
+}
