@@ -13,32 +13,24 @@
             padding: 0;
             background-color: #1a1a2e;
             color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         /* Main HUD Container */
         .hud-container {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: fixed;
+            top: 20px;
+            right: 20px;
             display: flex;
             flex-direction: column;
             gap: 20px;
-            width: 100%;
-            max-width: 1200px;
+            width: 250px;
             z-index: 10;
         }
 
-        /* Health & Armor */
+        /* Health and Armor Bars */
         .health-armor {
             display: flex;
             justify-content: space-between;
-            width: 100%;
-            max-width: 800px;
-            margin-bottom: 20px;
         }
 
         .health-armor div {
@@ -51,17 +43,18 @@
             background-color: #333;
             border-radius: 12px;
             overflow: hidden;
+            margin-bottom: 10px;
         }
 
         .progress-health {
-            width: 70%;
+            width: 80%;
             height: 100%;
             background-color: #e74c3c;
             border-radius: 12px 0 0 12px;
         }
 
         .progress-armor {
-            width: 50%;
+            width: 60%;
             height: 100%;
             background-color: #8e44ad;
             border-radius: 12px 0 0 12px;
@@ -71,26 +64,13 @@
             font-size: 1.2rem;
             margin-top: 5px;
             text-align: center;
-        }
-
-        /* Wanted Level */
-        .wanted-level {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .wanted-level img {
-            width: 30px;
-            height: auto;
+            color: #fff;
         }
 
         /* Money */
         .money {
             display: flex;
             justify-content: space-between;
-            width: 100%;
-            max-width: 800px;
             margin-top: 20px;
         }
 
@@ -132,7 +112,8 @@
         .clock {
             position: absolute;
             top: 20px;
-            right: 30px;
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 2rem;
             font-weight: bold;
             color: #fff;
@@ -141,21 +122,19 @@
         .month {
             position: absolute;
             top: 55px;
-            right: 30px;
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 1.1rem;
             color: #8e44ad;
         }
 
-        /* Smooth Hover Effects */
-        .progress-bar:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
+        /* Purple and Red Styling */
+        .purple {
+            color: #8e44ad;
         }
 
-        .nav-item:hover {
-            cursor: pointer;
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
+        .red {
+            color: #e74c3c;
         }
     </style>
 </head>
@@ -170,34 +149,25 @@
                 <div class="progress-bar">
                     <div class="progress-health"></div>
                 </div>
-                <p class="stat-text">Health</p>
+                <p class="stat-text purple">Health</p>
             </div>
             <div>
                 <div class="progress-bar">
                     <div class="progress-armor"></div>
                 </div>
-                <p class="stat-text">Armor</p>
+                <p class="stat-text purple">Armor</p>
             </div>
-        </div>
-
-        <!-- Wanted Level -->
-        <div class="wanted-level">
-            <img src="img/star.png" alt="Wanted Star">
-            <img src="img/star.png" alt="Wanted Star">
-            <img src="img/star.png" alt="Wanted Star">
-            <img src="img/star.png" alt="Wanted Star">
-            <img src="img/star.png" alt="Wanted Star">
         </div>
 
         <!-- Money -->
         <div class="money">
             <div>
                 <img src="img/wallet.png" class="money-icon" alt="Wallet">
-                <p class="money-text" id="pCash">$0</p>
+                <p class="money-text red" id="pCash">$500</p>
             </div>
             <div>
                 <img src="img/card.png" class="money-icon" alt="Card">
-                <p class="money-text" id="pBank">$0</p>
+                <p class="money-text purple" id="pBank">$2000</p>
             </div>
         </div>
 
@@ -226,16 +196,6 @@
         }
 
         setInterval(updateClock, 1000);
-
-        // Placeholder JavaScript for Updating Stats
-        function updateStats() {
-            const pCash = document.getElementById('pCash');
-            const pBank = document.getElementById('pBank');
-            pCash.innerHTML = `$${Math.floor(Math.random() * 10000)}`;
-            pBank.innerHTML = `$${Math.floor(Math.random() * 10000)}`;
-        }
-
-        setInterval(updateStats, 5000);
     </script>
 
 </body>
