@@ -4,287 +4,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stylized HUD</title>
-    <link rel="stylesheet" href="css/styles_v%3D1.5.3.css">
-    <link rel="stylesheet" href="css/speedometer_v%3D1.1.2.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../cdn.web-fonts.ge/fonts/bpg-nateli-mtavruli/css/bpg-nateli-mtavruli.min.css">
+    <title>Enhanced UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Encode+Sans+Expanded:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        /* General Styles */
         body {
             font-family: 'Encode Sans Expanded', sans-serif;
-            background-color: #1a1a1a;
-            color: white;
-        }
-
-        .background-shadow {
-            position: absolute;
-            background: rgba(0, 0, 0, 0.5);
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .rightGift {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-            color: purple;
-        }
-
-        .rightGift .divlogo {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a2e;
+            color: #fff;
             display: flex;
+            flex-direction: column;
             align-items: center;
         }
 
-        .logo-main img {
-            width: 50px;
-            height: 50px;
+        a {
+            text-decoration: none;
         }
 
-        .statisticsLeftTwo {
-            margin-left: 10px;
+        h1,
+        h2,
+        p {
+            margin: 0;
         }
 
-        .wanteddivv {
+        /* Main Container */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
             display: flex;
             justify-content: space-between;
-            padding: 10px;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
-        .wanteddivv .datetext {
-            color: #fa6f71;
-            font-size: 18px;
+        .logo-container .logo {
+            width: 60px;
+            height: auto;
         }
 
-        .rightTwoo .ammo {
+        .stats-container {
+            text-align: right;
+        }
+
+        .clock {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .month {
+            font-size: 1.2rem;
+            color: #8e44ad;
+        }
+
+        /* Content Styles */
+        .content-container {
             display: flex;
-            justify-content: center;
-            padding: 10px;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .mainDiv .progressbar .progress-container .statisticsdiv {
-            margin: 5px;
+        /* Progress Bar Styles */
+        .progress-bar-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
         .progress-bar {
-            height: 8px;
-            background: linear-gradient(to right, #ff6ec7, #ff2a68);
-            border-radius: 5px;
+            width: 100%;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin-left: 10px;
+            overflow: hidden;
         }
 
-        .health, .armor {
+        .progress-health {
             height: 100%;
-            border-radius: 5px;
+            background-color: #e74c3c;
+            border-radius: 10px 0 0 10px;
         }
 
-        .hud-right-bot {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            z-index: 150;
-            color: #ff6ec7;
+        .progress-armor {
+            height: 100%;
+            background-color: #8e44ad;
+            border-radius: 10px 0 0 10px;
         }
 
-        .hud-speedometer svg path {
-            transition: stroke-dashoffset 1s ease;
+        .stat-text {
+            font-size: 1.1rem;
         }
 
-        .notification {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-        }
-
-        .hud-speedometer .hud-speed-text {
-            color: #fa6f71;
-            font-size: 1.2em;
-        }
-
-        .hud-speedometer-footer-item {
-            color: #ff2a68;
-        }
-
-        /* Add some transitions for smoother UI elements */
-        .progress-bar {
-            transition: width 0.5s ease;
-        }
-
-        /* Styles for "green zone" and other alerts */
-        .greenzone {
-            background-color: #00ff00;
-            padding: 10px;
-            border-radius: 5px;
+        /* Gift Box Styles */
+        .gift-box {
+            background-color: #e74c3c;
+            padding: 20px;
+            border-radius: 10px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
 
-        .greenzone .textzone {
-            color: black;
-            font-weight: bold;
+        .gift-content {
+            display: flex;
+            align-items: center;
         }
 
-        .gps {
-            background-color: rgba(0, 0, 255, 0.6);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
+        .gift-text {
+            font-size: 1.2rem;
+            margin-right: 10px;
         }
 
+        .gift-image {
+            width: 50px;
+            height: auto;
+        }
+
+        /* Wanted Level Styles */
+        .wanted-level {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .wanted-icons .wanted-star {
+            width: 30px;
+            height: auto;
+            margin: 0 5px;
+        }
+
+        /* Money Stats Styles */
+        .money-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .money-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .money-icon {
+            width: 30px;
+            height: auto;
+        }
+
+        .money-text {
+            font-size: 1.2rem;
+        }
+
+        /* Navigation Footer Styles */
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .nav-icon {
+            width: 30px;
+            height: auto;
+        }
+
+        /* Location Styles */
+        .location-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .location-text {
+            font-size: 1.2rem;
+        }
+
+        /* Smooth Hover Effects */
+        .nav-item:hover,
+        .gift-box:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
     </style>
 </head>
 
 <body>
-    <div class="background-shadow"></div>
 
-    <div class="rightGift">
-        <div class="divlogo">
-            <div class="rightSidebar">
-                <div class="logo-main">
-                    <img src="img/c.png" alt="">
-                </div>
+    <div class="main-container">
+        <header class="header">
+            <div class="logo-container">
+                <img src="img/c.png" alt="Logo" class="logo">
             </div>
+            <div class="stats-container">
+                <p class="clock" id="clock">15:28</p>
+                <p class="month" id="month">ივნისი</p>
+            </div>
+        </header>
 
-            <div class="statisticsLeftTwo">
-                <div class="wanteddivv">
-                    <p class="datetext" id="clock">15:28</p>
-                    <div class="datebackground">
-                        <p class="month" id="month">ივნისი</p>
+        <div class="content-container">
+            <section class="health-bar">
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress-health" style="width: 70%;"></div>
                     </div>
+                    <span class="stat-text">Health</span>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="rightTwoo">
-        <div class="ammo">
-            <img id="weapon" class="statisticsimg" src="img/weapons/24.png" alt="">
-        </div>
-        <div class="mainDiv">
-            <div class="progressbar">
-                <div class="progress-container">
-                    <div class="statisticsdiv">
-                        <div class="iconsstatistics">
-                            <img src="img/ICONS/health.png" class="iconca" alt="">
-                        </div>
-                        <div class="progress-bar">
-                            <div class="health" style="width: 70%;"></div>
-                        </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress-armor" style="width: 50%;"></div>
                     </div>
+                    <span class="stat-text">Armor</span>
                 </div>
-                <div class="progress-container">
-                    <div class="statisticsdiv">
-                        <div class="iconsstatistics">
-                            <img src="img/ICONS/armor.png" class="iconca" alt="">
-                        </div>
-                        <div class="progress-bar">
-                            <div class="armor" style="width: 50%;"></div>
-                        </div>
-                    </div>
+            </section>
+
+            <section class="gift-box">
+                <div class="gift-content">
+                    <p class="gift-text">Play for 5 hours to receive a gift!</p>
+                    <p id="bonustime" class="gift-time">0h 0m</p>
+                    <img src="img/trophy.png" alt="Gift" class="gift-image">
                 </div>
-            </div>
+            </section>
+
+            <section class="wanted-level">
+                <div class="wanted-icons">
+                    <img src="img/star.png" class="wanted-star">
+                    <img src="img/star.png" class="wanted-star">
+                    <img src="img/star.png" class="wanted-star">
+                    <img src="img/star.png" class="wanted-star">
+                    <img src="img/star.png" class="wanted-star">
+                    <img src="img/star.png" class="wanted-star">
+                </div>
+            </section>
+
+            <section class="money-stats">
+                <div class="money-container">
+                    <img src="img/wallet.png" class="money-icon">
+                    <p id="pCash" class="money-text">0</p>
+                </div>
+                <div class="money-container">
+                    <img src="img/card.png" class="money-icon">
+                    <p id="pBank" class="money-text">0</p>
+                </div>
+            </section>
         </div>
-    </div>
 
-    <div class="right">
-        <div class="gifttimer" id="giftbox">
-            <div class="giftzone">
-                <div class="giftTexts">
-                    <p class="textgiftFirst">ითამაშე 5 საათი</p>
-                    <p class="textgift">და მიიღე საჩუქარი</p>
-                    <p class="textgift" id="bonustime" style="text-align: center;">0h 0m</p>
+        <footer class="footer">
+            <nav class="navigation">
+                <div class="nav-item">
+                    <img src="img/ICONS/microphone.png" class="nav-icon">
+                    <span>Z</span>
                 </div>
-                <img src="img/trophy.png" class="giftimage" alt="">
-            </div>
-        </div>
-    </div>
-
-    <div class="right">
-        <div class="wanteddiv">
-            <img src="img/star.png" id="wanted1" class="wantedimg">
-            <img src="img/star.png" id="wanted2" class="wantedimg">
-            <img src="img/star.png" id="wanted3" class="wantedimg">
-            <img src="img/star.png" id="wanted4" class="wantedimg">
-            <img src="img/star.png" id="wanted5" class="wantedimg">
-            <img src="img/star.png" id="wanted6" class="wantedimg">
-        </div>
-    </div>
-
-    <div class="right">
-        <div class="rightSidebarTwo">
-            <div class="statisticsLeftTwo">
-                <div class="moneydiv">
-                    <img src="img/wallet.png" class="moneystats">
-                    <p id="pCash" class="cash">0</p>
+                <div class="nav-item">
+                    <img src="img/RADIO.png" class="nav-icon">
+                    <span>B</span>
                 </div>
-                <div class="moneydiv">
-                    <img src="img/card.png" class="moneystats">
-                    <p id="pBank" class="bank">0</p>
+                <div class="nav-item">
+                    <img src="img/MAIN.png" class="nav-icon">
+                    <span>M</span>
                 </div>
+                <div class="nav-item">
+                    <img src="img/CHAT.png" class="nav-icon">
+                    <span>T</span>
+                </div>
+                <div class="nav-item">
+                    <img src="img/ICONS/carlock.png" class="nav-icon">
+                    <span>L</span>
+                </div>
+                <div class="nav-item">
+                    <img src="img/ICONS/engine.png" class="nav-icon">
+                    <span>2</span>
+                </div>
+            </nav>
+
+            <div class="location-container" id="gpsdiv">
+                <img src="img/location.png" class="location-icon">
+                <p class="location-text">Location: <span id="gpsloc"></span></p>
             </div>
-        </div>
+        </footer>
     </div>
 
-    <div class="left-area">
-        <div class="navBar">
-            <div class="menu">
-                <div class="square"><img src="img/ICONS/microphone.png" class="iconsImage" alt=""></div>
-                <h2>Z</h2>
-            </div>
-            <div class="menu">
-                <div class="square"><img src="img/RADIO.png" class="iconsImage" alt=""></div>
-                <h2>B</h2>
-            </div>
-            <div class="menu">
-                <div class="square"><img src="img/MAIN.png" class="iconsImage" alt=""></div>
-                <h2>M</h2>
-            </div>
-            <div class="menu">
-                <div class="square"><img src="img/CHAT.png" class="iconsImage" alt=""></div>
-                <h2>T</h2>
-            </div>
-            <div class="menu">
-                <div class="square"><img src="img/ICONS/carlock.png" class="iconsImage" alt=""></div>
-                <h2>L</h2>
-            </div>
-            <div class="menu">
-                <div class="square"><img src="img/ICONS/engine.png" class="iconsImage" alt=""></div>
-                <h2>2</h2>
-            </div>
-            <div class="menuxzc" id="greenzonediv">
-                <div class="greenzone">
-                    <img src="img/danger.png" class="iconsImageSecond" alt="">
-                    <p class="textzone">მწვანე ზონა</p>
-                </div>
-            </div>
-            <div class="menugps" id="gpsdiv">
-                <div class="gps">
-                    <img src="img/location.png" class="iconlocation" alt="">
-                    <p class="textgps">ადგილი: </p>
-                    <p class="textgps" id="gpsloc" style="margin-left: 10px;"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="notification-bar" class="notification hidden">
-        <span id="icon" class="icon">🛈</span>
-        <span id="message"></span>
-    </div>
-
-    <script src="../../code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/data.js"></script>
     <script src="js/date.js"></script>
+
 </body>
 
 </html>
