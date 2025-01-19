@@ -8,23 +8,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Encode+Sans+Expanded:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Encode Sans Expanded', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #1a1a2e;
             color: #fff;
         }
 
-        /* Main HUD Container */
+        /* Rectangular Frame Container */
         .hud-container {
             position: fixed;
             top: 20px;
             right: 20px;
+            width: 300px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+            z-index: 10;
             display: flex;
             flex-direction: column;
             gap: 20px;
-            width: 250px;
-            z-index: 10;
+        }
+
+        /* Title Section */
+        .hud-title {
+            font-size: 1.5rem;
+            text-align: center;
+            color: #8e44ad;
         }
 
         /* Health and Armor Bars */
@@ -39,39 +49,37 @@
 
         .progress-bar {
             width: 100%;
-            height: 25px;
+            height: 20px;
             background-color: #333;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 10px;
+            border-radius: 10px;
+            margin-bottom: 8px;
         }
 
         .progress-health {
             width: 80%;
             height: 100%;
             background-color: #e74c3c;
-            border-radius: 12px 0 0 12px;
+            border-radius: 10px 0 0 10px;
         }
 
         .progress-armor {
             width: 60%;
             height: 100%;
             background-color: #8e44ad;
-            border-radius: 12px 0 0 12px;
+            border-radius: 10px 0 0 10px;
         }
 
         .stat-text {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-top: 5px;
             text-align: center;
             color: #fff;
         }
 
-        /* Money */
+        /* Money Section */
         .money {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
         }
 
         .money div {
@@ -90,12 +98,11 @@
             font-weight: bold;
         }
 
-        /* Location */
+        /* Location Section */
         .location {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
         }
 
         .location-icon {
@@ -105,13 +112,13 @@
         }
 
         .location-text {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
-        /* Clock */
+        /* Clock Section */
         .clock {
             position: absolute;
-            top: 20px;
+            top: 10px;
             left: 50%;
             transform: translateX(-50%);
             font-size: 2rem;
@@ -121,10 +128,10 @@
 
         .month {
             position: absolute;
-            top: 55px;
+            top: 45px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #8e44ad;
         }
 
@@ -141,8 +148,11 @@
 
 <body>
 
-    <!-- HUD Container -->
+    <!-- Main HUD Container -->
     <div class="hud-container">
+        <!-- Title Section -->
+        <div class="hud-title">GTA HUD</div>
+
         <!-- Health and Armor Bars -->
         <div class="health-armor">
             <div>
@@ -159,7 +169,7 @@
             </div>
         </div>
 
-        <!-- Money -->
+        <!-- Money Section -->
         <div class="money">
             <div>
                 <img src="img/wallet.png" class="money-icon" alt="Wallet">
@@ -171,7 +181,7 @@
             </div>
         </div>
 
-        <!-- Location -->
+        <!-- Location Section -->
         <div class="location">
             <img src="img/location.png" class="location-icon" alt="Location">
             <p class="location-text" id="gpsloc">Los Santos</p>
@@ -184,7 +194,6 @@
 
     <!-- Scripts -->
     <script src="js/jquery.min.js"></script>
-    <script src="js/date.js"></script>
     <script>
         // Placeholder JavaScript for Clock
         function updateClock() {
