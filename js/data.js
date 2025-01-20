@@ -161,6 +161,16 @@ cef.on("data:pool:notification", (notification) => {
                 showNotification("მანქანის კარი წარმატებით დაიხურა");
                 break;
             }
+        case 5:
+            {
+                showNotification("თქვენ გაიარეთ ბოსის ავტორიზაცია");
+                break;
+            }
+        case 6:
+            {
+                showNotification("თქვენს მანქანაში არ არის საწვავი");
+                break;
+            }
     }
 });
 
