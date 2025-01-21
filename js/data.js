@@ -171,6 +171,16 @@ cef.on("data:pool:notification", (notification) => {
                 showNotification("თქვენს მანქანაში არ არის საწვავი");
                 break;
             }
+        case 7:
+            {
+                showNotification("თქვენს გამოიძაღეთ მანქანა, ჩამოგეჭრათ 2500 დოლარი ");
+                break;
+            }
+        case 8:
+            {
+                showNotification("თქვენს მანქანაში არ არის საწვავი");
+                break;
+            }
     }
 });
 
@@ -204,20 +214,26 @@ function showNotification(text) {
     }, 3000);
 }
 
-function showError(text) {
-    if (timeoutId !== null) {
-        clearTimeout(timeoutId);
-    }
+// Function to display error messages
+function showError(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.style.position = 'fixed';
+    errorDiv.style.top = '10px';
+    errorDiv.style.left = '50%';
+    errorDiv.style.transform = 'translateX(-50%)';
+    errorDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
+    errorDiv.style.color = '#FFFFFF';
+    errorDiv.style.padding = '10px';
+    errorDiv.style.borderRadius = '5px';
+    errorDiv.style.zIndex = '1000';
+    errorDiv.innerText = message;
 
-    message.textContent = text;
-    bar.classList.remove('hidden');
-    bar.classList.remove('notification');
-    bar.classList.add('error');
-    bar.classList.add('visible');
-    
-    timeoutId = setTimeout(function () {
-        bar.classList.remove('visible');
-        bar.classList.add('hidden');
-        timeoutId = null; 
-    }, 3000);
+    // Append the error message to the body
+    document.body.appendChild(errorDiv);
+
+    // Optionally, remove the message after a few seconds
+    setTimeout(() => {
+        errorDiv.remove();
+    }, 5000); // Remove after 5 seconds
+}
 }
