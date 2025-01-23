@@ -10,7 +10,7 @@ cef.on("data:pool:bankmoney", (bankmoney) => {
     document.getElementById('pBank').textContent = bankmoney;
 })
 cef.on("data:pool:cashmoney", (cashmoney) => {
-    document.getElementById('m').textContent = cashmoney;
+    document.getElementById('pCasg').textContent = cashmoney;
 })
 cef.on("game:data:playerStats", (hp, max_hp, arm, breath, wanted, weapon, ammo, max_ammo, money, speed) => {
     document.getElementById('weapon').src = "./img/weapons/" + weapon + ".png";
